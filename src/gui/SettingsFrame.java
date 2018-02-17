@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 
-public class Frame extends JFrame {
+public class SettingsFrame extends JFrame {
 
 	private SettingsPanel settingspanel;
 
@@ -17,8 +17,8 @@ public class Frame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Frame frame = new Frame();
-					frame.setVisible(true);
+					SettingsFrame settingsFrame = new SettingsFrame();
+					settingsFrame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -29,8 +29,8 @@ public class Frame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Frame() {
-		settingspanel = new SettingsPanel();
+	public SettingsFrame() {
+		settingspanel = new SettingsPanel(this);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 467, 359);
 		setContentPane(settingspanel);

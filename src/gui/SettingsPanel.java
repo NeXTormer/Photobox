@@ -20,10 +20,13 @@ public class SettingsPanel extends JPanel {
 	private JTextField tf_saveLocation;
 
 	private Preferences preferences;
+	private JFrame frame;
+
 	/**
 	 * Create the panel.
 	 */
-	public SettingsPanel() {
+	public SettingsPanel(JFrame frame) {
+		this.frame = frame;
 		preferences = Preferences.userNodeForPackage(this.getClass());
 
 		try {
@@ -39,6 +42,11 @@ public class SettingsPanel extends JPanel {
 		JButton btn_Start = new JButton("Start");
 		btn_Start.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				PhotoFrame pf = new PhotoFrame(preferences);
+				pf.setVisible(true);
+				frame.setVisible(false);
+
 			}
 		});
 		btn_Start.setFont(new Font("Century Gothic", Font.PLAIN, 15));
