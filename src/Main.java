@@ -13,7 +13,7 @@ public class Main extends JPanel {
             String format = "jpg";
             String fileName = "photos/" + counter + "ss." + format;
 
-            Rectangle screenRect = new Rectangle(100, 100, 1280, 720);
+            Rectangle screenRect = new Rectangle(100, 100, 1920, 1080);
             BufferedImage screenshot;
             long started = System.currentTimeMillis();
 
@@ -50,8 +50,31 @@ public class Main extends JPanel {
         frame.setContentPane(main);
         frame.setSize(1280, 720);
         frame.setLocationRelativeTo(null);
+        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //frame.setUndecorated(true);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        //showOnScreen(1, frame);
+
         main.start();
+    }
+
+    public static void showOnScreen( int screen, JFrame frame )
+    {
+        GraphicsEnvironment ge = GraphicsEnvironment
+                .getLocalGraphicsEnvironment();
+        GraphicsDevice[] gs = ge.getScreenDevices();
+        if( screen > -1 && screen < gs.length )
+        {
+            gs[screen].setFullScreenWindow( frame );
+        }
+        else if( gs.length > 0 )
+        {
+            gs[0].setFullScreenWindow( frame );
+        }
+        else
+        {
+            throw new RuntimeException( "No Screens Found" );
+        }
     }
 }
