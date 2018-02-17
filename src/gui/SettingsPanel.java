@@ -16,6 +16,10 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class SettingsPanel extends JPanel {
 	private JTextField tf_cameraLocation;
@@ -46,9 +50,17 @@ public class SettingsPanel extends JPanel {
 		lblNewLabel.setFont(new Font("Century Gothic", Font.PLAIN, 23));
 		
 		JButton btn_Start = new JButton("Start");
+		btn_Start.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_Start.setFont(new Font("Century Gothic", Font.PLAIN, 15));
 		
 		JButton btn_SetButtonPosition = new JButton("Set Button Position");
+		btn_SetButtonPosition.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_SetButtonPosition.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		
 		JSeparator separator = new JSeparator();
@@ -57,6 +69,10 @@ public class SettingsPanel extends JPanel {
 		lblcFelixHolz.setFont(new Font("Century Gothic", Font.ITALIC, 13));
 		
 		JButton btn_SetConstraints = new JButton("Set Preview Constraints");
+		btn_SetConstraints.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_SetConstraints.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		
 		JLabel lblButtonPos = new JLabel("X: 1000 Y: 1000");
@@ -71,17 +87,35 @@ public class SettingsPanel extends JPanel {
 		lblNewLabel_1.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		
 		tf_cameraLocation = new JTextField();
+		tf_cameraLocation.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent arg0) {
+			}
+		});
 		tf_cameraLocation.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Photo Save Location");
 		lblNewLabel_2.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		
 		tf_saveLocation = new JTextField();
+		tf_saveLocation.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+			}
+		});
 		tf_saveLocation.setColumns(10);
 		
 		JButton btn_selectSaveLocation = new JButton("...");
+		btn_selectSaveLocation.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		
 		JButton btn_selectCameraLocation = new JButton("...");
+		btn_selectCameraLocation.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
