@@ -1,6 +1,6 @@
 package gui;
 
-import java.awt.EventQueue;
+import java.awt.*;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -38,6 +38,8 @@ public class Frame extends JFrame {
 		setResizable(false);
 		ImageIcon img = new ImageIcon("icon.png");
 		setIconImage(img.getImage());
+		//setUndecorated(true);
+		//setBackground(new Color(0, 0.2f, 0, 0.5f));
 	}
 
 }

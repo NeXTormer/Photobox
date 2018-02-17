@@ -43,7 +43,7 @@ public class Main extends JPanel {
 
 
 
-    public static void main(String[] args)
+    public static void mains(String[] args)
     {
         JFrame frame = new JFrame("Photobox");
         Main main = new Main();
