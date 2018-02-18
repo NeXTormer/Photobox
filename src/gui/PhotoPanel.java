@@ -43,6 +43,7 @@ public class PhotoPanel extends JPanel implements KeyListener {
 	private BufferedImage currentyProcessingImage;
 
 	private BufferedImage printPrompt;
+	private BufferedImage overlay;
 
 	//Printing prompt
 	private boolean print_request = false;
@@ -66,6 +67,7 @@ public class PhotoPanel extends JPanel implements KeyListener {
 
 		try {
 			printPrompt = ImageIO.read(new File("res/print.png"));
+			overlay = ImageIO.read(new File("res/overlay.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -191,6 +193,7 @@ public class PhotoPanel extends JPanel implements KeyListener {
 				try {
 					System.out.println("Saving image to file...");
 					System.out.println(currentyProcessingImage.getData().getHeight());
+					currentyProcessingImage.getGraphics().drawImage(overlay, 0, 0, null);
 					printImage(currentyProcessingImage);
 					ImageIO.write(currentyProcessingImage, "jpg", new File(photoSaveLocation + "\\pb2018_img_" + System.currentTimeMillis() + ".jpg"));
 				} catch (IOException e1) {
@@ -240,6 +243,14 @@ public class PhotoPanel extends JPanel implements KeyListener {
 			for(int j=0; j<height; j++)
 				biFlip.setRGB(height-1-j, width-1-i, bi.getRGB(i, j));
 		return biFlip;
+	}
+
+	private BufferedImage merge(BufferedImage a, BufferedImage b)
+	{
+		BufferedImage result = new BufferedImage(a.getWidth(), a.getHeight(), a.getType());
+		result.getGraphics().drawImage(a, 0, 0, null);
+		result.getGraphics().drawImage(b, 0, 0, null);
+		return result;
 	}
 
 	@Override
