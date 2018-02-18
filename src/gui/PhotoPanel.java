@@ -10,6 +10,10 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -187,12 +191,55 @@ public class PhotoPanel extends JPanel implements KeyListener {
 				try {
 					System.out.println("Saving image to file...");
 					System.out.println(currentyProcessingImage.getData().getHeight());
+					printImage(currentyProcessingImage);
 					ImageIO.write(currentyProcessingImage, "jpg", new File(photoSaveLocation + "\\pb2018_img_" + System.currentTimeMillis() + ".jpg"));
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
 			}
 		}
+	}
+
+	private void printImage(BufferedImage image)
+	{
+		PrinterJob printJob = PrinterJob.getPrinterJob();
+		printJob.setPrintable(new Printable() {
+			public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
+				if (pageIndex != 0) {
+					return NO_SUCH_PAGE;
+				}
+				//pageFormat.setOrientation(PageFormat.LANDSCAPE);
+ 				graphics.drawImage(flip(rotate90DX(image)), 0, 0, (int) pageFormat.getWidth(), (int) pageFormat.getHeight(), null);
+				return PAGE_EXISTS;
+			}
+		});
+		try {
+			printJob.print();
+		} catch (PrinterException e1) {
+			e1.printStackTrace();
+		}
+	}
+
+	public BufferedImage flip(BufferedImage image)
+	{
+		BufferedImage newimage = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
+		for (int i=0;i<image.getWidth();i++) {
+			for (int j = 0; j < image.getHeight() / 2; j++) {
+				newimage.setRGB(i, j, image.getRGB(i, image.getHeight() - j - 1));
+				newimage.setRGB(i, image.getHeight() - j - 1, image.getRGB(i, j));
+			}
+		}
+		return newimage;
+	}
+
+	private BufferedImage rotate90DX(BufferedImage bi) {
+		int width = bi.getWidth();
+		int height = bi.getHeight();
+		BufferedImage biFlip = new BufferedImage(height, width, bi.getType());
+		for(int i=0; i<width; i++)
+			for(int j=0; j<height; j++)
+				biFlip.setRGB(height-1-j, width-1-i, bi.getRGB(i, j));
+		return biFlip;
 	}
 
 	@Override
