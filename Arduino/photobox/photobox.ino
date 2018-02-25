@@ -1,60 +1,46 @@
-#define buttoncount 3
+#include <ButtonDebounce.h>
 
-const int buttons[3] = { 4, 5, 6 };
-const int ledPin = 7;
+ButtonDebounce b1(4, 100);
+ButtonDebounce b2(5, 100);
+ButtonDebounce b3(6, 100);
 
 
-unsigned long lastDebounceTime[buttoncount];
-unsigned long debounceDelay = 50;
+void b1Callback(int state)
+{
+  if(state)
+  {
+    Serial.println("Button 1"); 
+  }
+}
 
-int ledState = HIGH;
+void b2Callback(int state)
+{
+  if(state)
+  {
+    Serial.println("Button 2"); 
+  }
+}
 
-int buttonState[buttoncount];
-int lastButtonState[buttoncount];
+void b3Callback(int state)
+{
+  if(state)
+  {
+    Serial.println("Button 3"); 
+  }
+}
 
 void setup() 
 {
   Serial.begin(9600);
 
-  for(int i = 0; i < buttoncount; i++)
-  {
-        lastButtonState[i] = LOW;
-        lastDebounceTime[i] = 0;
-
-        pinMode(buttons[i], INPUT);
-  }
-  
-  pinMode(ledPin, OUTPUT);
-
-  digitalWrite(ledPin, ledState);
+  b1.setCallback(b1Callback);
+  b2.setCallback(b2Callback);
+  b3.setCallback(b3Callback);
 }
 
 void loop() 
 {
-  for(int i = 0; i < buttoncount; i++)
-  {
-    int reading = digitalRead(buttons[i]);
-    if (reading != lastButtonState[i]) 
-    {
-      lastDebounceTime[i] = millis();
-    }
-
-    if ((millis() - lastDebounceTime[i]) > debounceDelay) 
-    {
-      if (reading != buttonState[i]) 
-      {
-        buttonState[i] = reading;
-        if (buttonState[i] == HIGH) 
-        {
-          //button pressed
-          Serial.print(i);
-          ledState = !ledState;
-        }
-      }
-    }
-    
-    digitalWrite(ledPin, ledState);
-    
-    lastButtonState[i] = reading;
-  }
+  b1.update();
+  b2.update();
+  b3.update();
 }
