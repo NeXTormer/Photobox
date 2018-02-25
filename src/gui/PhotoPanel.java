@@ -29,6 +29,7 @@ public class PhotoPanel extends JPanel implements KeyListener {
 	private PhotoFrame photoFrame;
 	private LiveView liveview;
 	private PhotoTimer phototimer;
+	private SettingsPanel settingsPanel;
 
 	private Preferences preferences;
 	private Robot robot;
@@ -51,11 +52,12 @@ public class PhotoPanel extends JPanel implements KeyListener {
 
 	private boolean updateGraphics = true;
 
-	public PhotoPanel(PhotoFrame frame, Preferences prefs) {
+	public PhotoPanel(PhotoFrame frame, Preferences prefs, SettingsPanel settingspanel) {
 		frame.addKeyListener(this);
 		addKeyListener(this);
 		this.photoFrame = frame;
 		this.preferences = prefs;
+		this.settingsPanel = settingspanel;
 		liveview = new LiveView(preferences);
 		phototimer = new PhotoTimer(this, 300, 300, 300);
 

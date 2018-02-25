@@ -1,5 +1,7 @@
 package gui;
 
+import at.htlklu.schnittstellen.SerielleSchnittstelle;
+
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
@@ -21,13 +23,25 @@ public class SettingsPanel extends JPanel {
 
 	private Preferences preferences;
 	private JFrame frame;
+	private SettingsPanel settingsPanel;
+
+	public SerielleSchnittstelle serialPort;
+
+
+	/**
+	 * @wbp.nonvisual location=136,479
+	 */
 
 	/**
 	 * Create the panel.
 	 */
 	public SettingsPanel(JFrame frame) {
 		this.frame = frame;
+		settingsPanel = this;
 		preferences = Preferences.userNodeForPackage(this.getClass());
+
+		serialPort = new SerielleSchnittstelle();
+		SerielleSchnittstelle.listAndSelectPort(); //TODO: Add button in GUI
 
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -43,7 +57,7 @@ public class SettingsPanel extends JPanel {
 		btn_Start.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				PhotoFrame pf = new PhotoFrame(preferences);
+				PhotoFrame pf = new PhotoFrame(preferences, settingsPanel);
 				pf.setVisible(true);
 				frame.setVisible(false);
 
