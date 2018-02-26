@@ -32,7 +32,7 @@ public class SettingsFrame extends JFrame {
 	public SettingsFrame() {
 		settingspanel = new SettingsPanel(this);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 467, 359);
+		setBounds(100, 100, 467, 388);
 		setContentPane(settingspanel);
 		setTitle("Photobox 2018");
 		setResizable(false);

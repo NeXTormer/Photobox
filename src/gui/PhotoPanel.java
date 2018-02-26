@@ -1,5 +1,8 @@
 package gui;
 
+import at.htlklu.schnittstellen.CharacterEvent;
+import at.htlklu.schnittstellen.CharacterListener;
+import at.htlklu.schnittstellen.SerielleSchnittstelle;
 import threads.LiveView;
 import util.PhotoTimer;
 
@@ -30,6 +33,7 @@ public class PhotoPanel extends JPanel implements KeyListener {
 	private LiveView liveview;
 	private PhotoTimer phototimer;
 	private SettingsPanel settingsPanel;
+	private SerielleSchnittstelle serialport;
 
 	private Preferences preferences;
 	private Robot robot;
@@ -53,6 +57,14 @@ public class PhotoPanel extends JPanel implements KeyListener {
 	private boolean updateGraphics = true;
 
 	public PhotoPanel(PhotoFrame frame, Preferences prefs, SettingsPanel settingspanel) {
+		serialport = new SerielleSchnittstelle(prefs.get("COM", "COM1"));
+		serialport.addCharacterListener(new CharacterListener() {
+			public void characterReceived(CharacterEvent arg0) {
+
+
+			}
+		});
+
 		frame.addKeyListener(this);
 		addKeyListener(this);
 		this.photoFrame = frame;

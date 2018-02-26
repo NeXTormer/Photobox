@@ -15,22 +15,18 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.prefs.Preferences;
+import at.htlklu.schnittstellen.CharacterListener;
+import at.htlklu.schnittstellen.CharacterEvent;
 
 public class SettingsPanel extends JPanel {
 
 	private JTextField tf_cameraLocation;
 	private JTextField tf_saveLocation;
+	private JLabel lblComPort;
 
 	private Preferences preferences;
 	private JFrame frame;
 	private SettingsPanel settingsPanel;
-
-	public SerielleSchnittstelle serialPort;
-
-
-	/**
-	 * @wbp.nonvisual location=136,479
-	 */
 
 	/**
 	 * Create the panel.
@@ -40,8 +36,6 @@ public class SettingsPanel extends JPanel {
 		settingsPanel = this;
 		preferences = Preferences.userNodeForPackage(this.getClass());
 
-		serialPort = new SerielleSchnittstelle();
-		SerielleSchnittstelle.listAndSelectPort(); //TODO: Add button in GUI
 
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -189,43 +183,63 @@ public class SettingsPanel extends JPanel {
 				}
 			}
 		});
+
+		lblComPort = new JLabel("Dr. Werner Schubb");
+		lblComPort.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblComPort.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		GroupLayout groupLayout = new GroupLayout(this);
+
+		JButton btnSelectComPort = new JButton("Select COM Port");
+		btnSelectComPort.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String port = SerielleSchnittstelle.listAndSelectPort();
+				preferences.put("COM", port);
+				lblComPort.setText("COM-Port: " + preferences.get("COM", "Undefined"));
+
+			}
+		});
+		btnSelectComPort.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(12)
-							.addComponent(separator, GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE))
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addComponent(separator, GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(12)
 							.addComponent(lblNewLabel)
-							.addPreferredGap(ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
 							.addComponent(lblcFelixHolz))
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
 							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
 								.addComponent(btn_SetButtonPosition, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(btn_SetConstraints, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 							.addGap(18)
 							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(lblConstraintSize, GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
-								.addComponent(lblButtonPos, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)))
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+								.addComponent(lblConstraintSize, GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+								.addComponent(lblButtonPos, GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)))
+						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
 							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(tf_saveLocation, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
-								.addComponent(tf_cameraLocation, GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE))
+								.addComponent(tf_saveLocation, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+								.addComponent(tf_cameraLocation, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(btn_selectSaveLocation, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
 								.addComponent(btn_selectCameraLocation, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(btn_Start, GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE))
+							.addComponent(btn_Start, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(lblNewLabel_1))
+						.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(btnSelectComPort, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
+							.addGap(38)
+							.addComponent(lblComPort, GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(lblNewLabel_2)))
@@ -249,6 +263,10 @@ public class SettingsPanel extends JPanel {
 						.addComponent(btn_SetConstraints)
 						.addComponent(lblConstraintSize))
 					.addGap(18)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnSelectComPort, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblComPort, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+					.addGap(11)
 					.addComponent(lblNewLabel_1)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
@@ -260,7 +278,7 @@ public class SettingsPanel extends JPanel {
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(tf_saveLocation, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btn_selectSaveLocation))
-					.addPreferredGap(ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
 					.addComponent(btn_Start, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
@@ -271,6 +289,9 @@ public class SettingsPanel extends JPanel {
 
 		lblButtonPos.setText("X: " + preferences.getInt("buttonx", -1) + " Y: " + preferences.getInt("buttony", -1));
 		lblConstraintSize.setText("X: " + preferences.getInt("conx", -1) + " Y: " + preferences.getInt("cony", -1) + " Width: " + preferences.getInt("conw", -1) + " Height: " + preferences.getInt("conh", -1));
+		lblComPort.setText("COM-Port: " + preferences.get("COM", "Undefined"));
+
+
 
 	}
 
@@ -289,5 +310,4 @@ public class SettingsPanel extends JPanel {
 			e.printStackTrace();
 		}
 	}
-
 }
