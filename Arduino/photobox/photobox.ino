@@ -1,15 +1,15 @@
 #include <ButtonDebounce.h>
 
-ButtonDebounce b1(4, 100);
-ButtonDebounce b2(5, 100);
-ButtonDebounce b3(6, 100);
+ButtonDebounce b1(2, 100);
+ButtonDebounce b2(3, 100);
+ButtonDebounce b3(4, 100);
 
 
 void b1Callback(int state)
 {
   if(state)
   {
-    Serial.println("Button 1"); 
+    Serial.print("t"); 
   }
 }
 
@@ -17,7 +17,7 @@ void b2Callback(int state)
 {
   if(state)
   {
-    Serial.println("Button 2"); 
+    Serial.print("y"); 
   }
 }
 
@@ -25,7 +25,7 @@ void b3Callback(int state)
 {
   if(state)
   {
-    Serial.println("Button 3"); 
+    Serial.print("n"); 
   }
 }
 
