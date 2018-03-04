@@ -4,6 +4,7 @@ import at.htlklu.schnittstellen.CharacterEvent;
 import at.htlklu.schnittstellen.CharacterListener;
 import at.htlklu.schnittstellen.SerielleSchnittstelle;
 import threads.LiveView;
+import util.PButton;
 import util.PhotoTimer;
 
 import javax.imageio.ImageIO;
@@ -27,7 +28,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.prefs.Preferences;
 
 
-public class PhotoPanel extends JPanel implements KeyListener {
+public class PhotoPanel extends JPanel implements KeyListener
+{
+
+	private final long PRINT_COOLDOWN = 30 * 1000;
 
 	private PhotoFrame photoFrame;
 	private LiveView liveview;
@@ -49,6 +53,7 @@ public class PhotoPanel extends JPanel implements KeyListener {
 
 	private BufferedImage printPrompt;
 	private BufferedImage overlay;
+	private BufferedImage printerBusy;
 
 	//Printing prompt
 	private boolean print_request = false;
@@ -56,12 +61,29 @@ public class PhotoPanel extends JPanel implements KeyListener {
 
 	private boolean updateGraphics = true;
 
+	//Cooldowns
+	private long lastPrintTime = 0;
+	private boolean free = true;
+
+	private boolean printerReady = true;
+
 	public PhotoPanel(PhotoFrame frame, Preferences prefs, SettingsPanel settingspanel) {
 		serialport = new SerielleSchnittstelle(prefs.get("COM", "COM1"));
 		serialport.addCharacterListener(new CharacterListener() {
-			public void characterReceived(CharacterEvent arg0) {
-
-
+			public void characterReceived(CharacterEvent ev) {
+				char rec = (char) ev.getReceivedCharacter();
+				if(rec == 't')
+				{
+					buttonPressed(PButton.TAKE_PHOTO);
+				}
+				else if(rec == 'y')
+				{
+					buttonPressed(PButton.YES);
+				}
+				else if(rec == 'n')
+				{
+					buttonPressed(PButton.NO);
+				}
 			}
 		});
 
@@ -82,6 +104,7 @@ public class PhotoPanel extends JPanel implements KeyListener {
 		try {
 			printPrompt = ImageIO.read(new File("res/print.png"));
 			overlay = ImageIO.read(new File("res/overlay.png"));
+			printerBusy = ImageIO.read(new File("res/printerbusy.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -111,6 +134,15 @@ public class PhotoPanel extends JPanel implements KeyListener {
 		g.drawImage(liveview.currentImage, 0, 0, 1280, 720, null);
 
 		phototimer.draw(g);
+
+		if(System.currentTimeMillis() - lastPrintTime > PRINT_COOLDOWN)
+		{
+			printerReady = true;
+		}
+		else
+		{
+			printerReady = false;
+		}
 	}
 
 	private void takePicture()
@@ -151,54 +183,43 @@ public class PhotoPanel extends JPanel implements KeyListener {
 		return null;
 	}
 
-	@Override
-	public void keyReleased(KeyEvent e) {
-		if(e.getKeyCode() == 32)
+
+	private void buttonPressed(PButton button)
+	{
+		if(button == PButton.TAKE_PHOTO)
 		{
-			System.out.println("Take Picture");
-			phototimer.runTimer(new Runnable() {
-				@Override
-				public void run() {
-					System.out.println("Timer Finished");
-					takePicture();
+			if(free)
+			{
+				free = false;
+				System.out.println("Take Picture");
+				phototimer.runTimer(new Runnable() {
+					@Override
+					public void run() {
+						System.out.println("Timer Finished");
+						takePicture();
 
-					timer.schedule(new TimerTask() {
-						@Override
-						public void run() {
-							BufferedImage image = loadImageFromCamera();
-							updateGraphics = false;
-							getGraphics().drawImage(image, 0, 0, 1280, 720, null);
-							currentyProcessingImage = image;
-							timer.schedule(new TimerTask() {
-								@Override
-								public void run() {
-									getGraphics().drawImage(printPrompt, 100, -100, 300, 300, null);
-									//TODO: Get Arduino button input
-									print_request = true;
-									timer.schedule(new TimerTask() {
-										@Override
-										public void run() {
-											//check if the print button has already been pressed --> if not: reset to normal mode
-											if(print_pressed == false)
-											{
-												print_request = false;
-												updateGraphics = true;
-											}
-										}
-									}, 3000);
-								}
-							},2000);
+						timer.schedule(new TimerTask() {
+							@Override
+							public void run() {
+								BufferedImage image = loadImageFromCamera();
+								updateGraphics = false;
+								getGraphics().drawImage(image, 0, 0, 1280, 720, null);
+								currentyProcessingImage = image;
+								timer.schedule(new TimerTask() {
+									@Override
+									public void run() {
+										getGraphics().drawImage(printPrompt, 100, -100, 300, 300, null);
+										print_request = true;
+									}
+								},2000);
 
-						}
-					}, 1000);
-				}
-			});
-
-
-
+							}
+						}, 1000);
+					}
+				});
+			}
 		}
-		//TODO: arduino button press to print
-		else
+		else if(button == PButton.YES)
 		{
 			if(print_request)
 			{
@@ -215,25 +236,69 @@ public class PhotoPanel extends JPanel implements KeyListener {
 				}
 			}
 		}
+		else if(button == PButton.NO)
+		{
+			if(print_request &&!print_pressed)
+			{
+				print_request = false;
+				updateGraphics = true;
+				free = true;
+			}
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		if(e.getKeyCode() == KeyEvent.VK_SPACE)
+		{
+			buttonPressed(PButton.TAKE_PHOTO);
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_V)
+		{
+			buttonPressed(PButton.YES);
+		}
+		else
+		{
+			buttonPressed(PButton.NO);
+		}
 	}
 
 	private void printImage(BufferedImage image)
 	{
-		PrinterJob printJob = PrinterJob.getPrinterJob();
-		printJob.setPrintable(new Printable() {
-			public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
-				if (pageIndex != 0) {
-					return NO_SUCH_PAGE;
+		if(printerReady)
+		{
+			lastPrintTime = System.currentTimeMillis();
+
+			PrinterJob printJob = PrinterJob.getPrinterJob();
+			printJob.setPrintable(new Printable() {
+				public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
+					if (pageIndex != 0) {
+						return NO_SUCH_PAGE;
+					}
+					//pageFormat.setOrientation(PageFormat.LANDSCAPE);
+					graphics.drawImage(flip(rotate90DX(image)), 0, 0, (int) pageFormat.getWidth(), (int) pageFormat.getHeight(), null);
+					return PAGE_EXISTS;
 				}
-				//pageFormat.setOrientation(PageFormat.LANDSCAPE);
- 				graphics.drawImage(flip(rotate90DX(image)), 0, 0, (int) pageFormat.getWidth(), (int) pageFormat.getHeight(), null);
-				return PAGE_EXISTS;
+			});
+			try {
+				printJob.print();
+			} catch (PrinterException e1) {
+				e1.printStackTrace();
 			}
-		});
-		try {
-			printJob.print();
-		} catch (PrinterException e1) {
-			e1.printStackTrace();
+			free = true;
+		}
+		else
+		{
+			System.out.println("Printer busy");
+			updateGraphics = false;
+			getGraphics().drawImage(printerBusy, 0, 0, 1000, 700, null);
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			updateGraphics = true;
+			free = true;
 		}
 	}
 
