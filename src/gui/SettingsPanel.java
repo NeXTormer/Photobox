@@ -120,7 +120,7 @@ public class SettingsPanel extends JPanel {
 		JLabel lblNewLabel_2 = new JLabel("Photo Save Location");
 		lblNewLabel_2.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 
-		JButton btn_SetButtonPosition = new JButton("Set Button Position");
+		JButton btn_SetButtonPosition = new JButton("Set PButton Position");
 		btn_SetButtonPosition.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -187,29 +187,21 @@ public class SettingsPanel extends JPanel {
 		lblComPort = new JLabel("Dr. Werner Schubb");
 		lblComPort.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblComPort.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+		
+		JButton button = new JButton("Select COM Port");
+		button.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		GroupLayout groupLayout = new GroupLayout(this);
-
-		JButton btnSelectComPort = new JButton("Select COM Port");
-		btnSelectComPort.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String port = SerielleSchnittstelle.listAndSelectPort();
-				preferences.put("COM", port);
-				lblComPort.setText("COM-Port: " + preferences.get("COM", "Undefined"));
-
-			}
-		});
-		btnSelectComPort.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(12)
-							.addComponent(separator, GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE))
+							.addComponent(separator, GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(12)
 							.addComponent(lblNewLabel)
-							.addPreferredGap(ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
 							.addComponent(lblcFelixHolz))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
@@ -218,28 +210,28 @@ public class SettingsPanel extends JPanel {
 								.addComponent(btn_SetConstraints, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 							.addGap(18)
 							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(lblConstraintSize, GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-								.addComponent(lblButtonPos, GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)))
+								.addComponent(lblConstraintSize, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+								.addComponent(lblButtonPos, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
 							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(tf_saveLocation, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
-								.addComponent(tf_cameraLocation, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE))
+								.addComponent(tf_saveLocation, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+								.addComponent(tf_cameraLocation, GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(btn_selectSaveLocation, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
 								.addComponent(btn_selectCameraLocation, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(btn_Start, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
+							.addComponent(btn_Start, GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(lblNewLabel_1))
-						.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(btnSelectComPort, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
+							.addComponent(button, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
 							.addGap(38)
-							.addComponent(lblComPort, GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
+							.addComponent(lblComPort, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(lblNewLabel_2)))
@@ -264,8 +256,8 @@ public class SettingsPanel extends JPanel {
 						.addComponent(lblConstraintSize))
 					.addGap(18)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnSelectComPort, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblComPort, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblComPort, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+						.addComponent(button, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
 					.addGap(11)
 					.addComponent(lblNewLabel_1)
 					.addPreferredGap(ComponentPlacement.RELATED)
@@ -278,7 +270,7 @@ public class SettingsPanel extends JPanel {
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(tf_saveLocation, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btn_selectSaveLocation))
-					.addPreferredGap(ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(btn_Start, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);

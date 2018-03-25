@@ -1,8 +1,8 @@
 #include <ButtonDebounce.h>
 
-ButtonDebounce b1(4, 100);
-ButtonDebounce b2(5, 100);
-ButtonDebounce b3(6, 100);
+ButtonDebounce b1(3, 100);
+ButtonDebounce b2(4, 100);
+ButtonDebounce b3(5, 100);
 
 bool red = false;
 bool green = false;
@@ -17,8 +17,7 @@ void b1Callback(int state)
 {
   if(state)
   {
-    Serial.println("Button 1"); 
-    green = !green;
+    Serial.print("t"); 
   }
 }
 
@@ -26,8 +25,8 @@ void b2Callback(int state)
 {
   if(state)
   {
-    Serial.println("Button 2"); 
-  	red = !red;
+    Serial.print("y"); 
+    red = !red;
   }
 }
 
@@ -35,7 +34,8 @@ void b3Callback(int state)
 {
   if(state)
   {
-    Serial.println("Button 3"); 
+    Serial.print("n");
+    green = !green;
   }
 }
 
@@ -46,7 +46,6 @@ void setup()
   b1.setCallback(b1Callback);
   b2.setCallback(b2Callback);
   b3.setCallback(b3Callback);
-
 
   pinMode(r1, OUTPUT);
   pinMode(r2, OUTPUT);
@@ -65,5 +64,4 @@ void loop()
   digitalWrite(r2, red);
   digitalWrite(g1, green);
   digitalWrite(g2, green);
-   
 }
