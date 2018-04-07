@@ -1,14 +1,17 @@
 #include <ButtonDebounce.h>
 
-const int redLED[] = { 6, 21 };
-const int greenLED[] = { 2, 23 };
-
 ButtonDebounce b1(3, 100);
 ButtonDebounce b2(4, 100);
 ButtonDebounce b3(5, 100);
 
+bool red = false;
+bool green = false;
 
-bool ready = false;
+const int r1 = 6;
+const int r2 = 12;
+const int g1 = 2;
+const int g2 = 13;
+
 
 void b1Callback(int state)
 {
@@ -23,6 +26,7 @@ void b2Callback(int state)
   if(state)
   {
     Serial.print("y"); 
+    red = !red;
   }
 }
 
@@ -31,6 +35,7 @@ void b3Callback(int state)
   if(state)
   {
     Serial.print("n");
+    green = !green;
   }
 }
 
@@ -42,10 +47,10 @@ void setup()
   b2.setCallback(b2Callback);
   b3.setCallback(b3Callback);
 
-  pinMode(redLED[0], OUTPUT);
-  pinMode(redLED[1], OUTPUT);
-  pinMode(greenLED[0], OUTPUT);
-  pinMode(greenLED[1], OUTPUT);
+  pinMode(r1, OUTPUT);
+  pinMode(r2, OUTPUT);
+  pinMode(g1, OUTPUT);
+  pinMode(g2, OUTPUT);
 
 }
 
@@ -55,14 +60,8 @@ void loop()
   b2.update();
   b3.update();
 
-  digitalWrite(redLED[0], !ready);
-  digitalWrite(redLED[1], !ready);
-  digitalWrite(greenLED[0], ready);
-  digitalWrite(greenLED[1], ready);
-
-  if(Serial.available())
-  {
-    int data = Serial.read();
-    ready = data;
-  }
+  digitalWrite(r1, red);
+  digitalWrite(r2, red);
+  digitalWrite(g1, green);
+  digitalWrite(g2, green);
 }

@@ -63,9 +63,23 @@ public class PhotoPanel extends JPanel implements KeyListener
 
 	//Cooldowns
 	private long lastPrintTime = 0;
-	private boolean free = true;
+
+
+	private boolean m_Free = true;
+	private void setFree(boolean free)
+	{
+		this.m_Free = free;
+		serialport.sendByte(m_Free ? 1 : 0);
+	}
+	public boolean getFree()
+	{
+		return m_Free;
+	}
+
 
 	private boolean printerReady = true;
+
+	private boolean photoboxReady = true;
 
 	public PhotoPanel(PhotoFrame frame, Preferences prefs, SettingsPanel settingspanel) {
 		serialport = new SerielleSchnittstelle(prefs.get("COM", "COM1"));
@@ -188,9 +202,9 @@ public class PhotoPanel extends JPanel implements KeyListener
 	{
 		if(button == PButton.TAKE_PHOTO)
 		{
-			if(free)
+			if(getFree())
 			{
-				free = false;
+				setFree(false);
 				System.out.println("Take Picture");
 				phototimer.runTimer(new Runnable() {
 					@Override
@@ -242,7 +256,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 			{
 				print_request = false;
 				updateGraphics = true;
-				free = true;
+				setFree(false);
 			}
 		}
 	}
@@ -285,7 +299,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 			} catch (PrinterException e1) {
 				e1.printStackTrace();
 			}
-			free = true;
+			setFree(true);
 		}
 		else
 		{
@@ -298,7 +312,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 				e.printStackTrace();
 			}
 			updateGraphics = true;
-			free = true;
+			setFree(true);
 		}
 	}
 
