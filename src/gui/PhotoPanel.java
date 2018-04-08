@@ -138,6 +138,8 @@ public class PhotoPanel extends JPanel implements KeyListener
 		buttony = preferences.getInt("buttony", -1);
 		cameraPhotoLocaton = preferences.get("camerasavelocation", "");
 		photoSaveLocation = preferences.get("photosavelocation", "");
+
+		setFree(true);
 	}
 
 	@Override

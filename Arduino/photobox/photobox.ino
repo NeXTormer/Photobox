@@ -1,7 +1,7 @@
 #include <ButtonDebounce.h>
 
-const int redLED[] = { 6, 21 };
-const int greenLED[] = { 2, 23 };
+const int redLED[] = { 6, 12 };
+const int greenLED[] = { 2, 13 };
 
 ButtonDebounce b1(3, 100);
 ButtonDebounce b2(4, 100);
