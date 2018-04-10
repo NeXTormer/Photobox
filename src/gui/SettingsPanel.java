@@ -14,6 +14,7 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 import at.htlklu.schnittstellen.CharacterListener;
 import at.htlklu.schnittstellen.CharacterEvent;
@@ -189,6 +190,17 @@ public class SettingsPanel extends JPanel {
 		lblComPort.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		
 		JButton button = new JButton("Select COM Port");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				preferences.put("COM", SerielleSchnittstelle.listAndSelectPort());
+				try {
+					preferences.flush();
+				} catch (BackingStoreException e1) {
+					e1.printStackTrace();
+				}
+				lblComPort.setText("COM-Port: " + preferences.get("COM", "Undefined"));
+			}
+		});
 		button.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(

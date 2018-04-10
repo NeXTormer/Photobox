@@ -82,7 +82,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 	private boolean photoboxReady = true;
 
 	public PhotoPanel(PhotoFrame frame, Preferences prefs, SettingsPanel settingspanel) {
-		serialport = new SerielleSchnittstelle(prefs.get("COM", "COM1"));
+		serialport = new SerielleSchnittstelle(prefs.get("COM", "COM9"));
 		serialport.addCharacterListener(new CharacterListener() {
 			public void characterReceived(CharacterEvent ev) {
 				char rec = (char) ev.getReceivedCharacter();
@@ -90,11 +90,11 @@ public class PhotoPanel extends JPanel implements KeyListener
 				{
 					buttonPressed(PButton.TAKE_PHOTO);
 				}
-				else if(rec == 'y')
+				else if(rec == 'n')
 				{
 					buttonPressed(PButton.YES);
 				}
-				else if(rec == 'n')
+				else if(rec == 'y')
 				{
 					buttonPressed(PButton.NO);
 				}
@@ -165,11 +165,13 @@ public class PhotoPanel extends JPanel implements KeyListener
 	{
 		robot.mouseMove(buttonx, buttony);
 		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+
 		try {
 			TimeUnit.MILLISECONDS.sleep(100);
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}
+		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 	}
 
 	private BufferedImage loadImageFromCamera()
@@ -230,7 +232,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 								},2000);
 
 							}
-						}, 1000);
+						}, 1700);
 					}
 				});
 			}
@@ -258,7 +260,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 			{
 				print_request = false;
 				updateGraphics = true;
-				setFree(false);
+				setFree(true);
 			}
 		}
 	}

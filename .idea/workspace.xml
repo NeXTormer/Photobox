@@ -7,8 +7,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35063e0e-9116-4bdf-b6d9-81a347eaac0d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Arduino/photobox/photobox.ino" afterPath="$PROJECT_DIR$/Arduino/photobox/photobox.ino" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/IMG_0001.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/IMG_0002.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/IMG_0003.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/635.8799126101364.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518969504565.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518969533718.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518974728912.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518974824745.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518974923486.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518975062479.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518975258272.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518975432729.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518975497053.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518975618030.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518975694342.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518975788040.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518975973249.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518976031027.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518988607277.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518988739878.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1518988806017.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520156069451.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520156385169.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520156796208.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520157049070.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520157221743.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520157235487.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520157372907.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520157382902.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520157941614.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520157968984.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520158022922.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520158039502.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520158116909.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520158132814.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520158253369.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520158264882.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520158562945.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520159711739.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1520159749819.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1522690042328.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1523124633717.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/Save/pb2018_img_1523124689269.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Photobox-Photo/z.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/PhotoPanel.java" afterPath="$PROJECT_DIR$/src/gui/PhotoPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/SettingsPanel.java" afterPath="$PROJECT_DIR$/src/gui/SettingsPanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,21 +63,32 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Photobox$SettingsFrame.coverage" NAME="SettingsFrame Coverage Results" MODIFIED="1523381198372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>gui.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="PhotoPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/PhotoPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-149">
-              <caret line="118" column="66" lean-forward="true" selection-start-line="118" selection-start-column="66" selection-end-line="118" selection-end-column="66" />
+            <state relative-caret-position="540">
+              <caret line="231" column="38" lean-forward="false" selection-start-line="231" selection-start-column="34" selection-end-line="231" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3083#3196#0" expanded="true" />
-                <element signature="e#3195#3196#0" expanded="true" />
-                <element signature="e#4944#5436#0" expanded="true" />
-                <element signature="e#5218#5411#0" expanded="true" />
-                <element signature="e#5410#5411#0" expanded="true" />
-                <element signature="e#5435#5436#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingsPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/SettingsPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="847">
+              <caret line="200" column="87" lean-forward="false" selection-start-line="200" selection-start-column="87" selection-end-line="200" selection-end-column="87" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,6 +115,13 @@
       <find>ready</find>
       <find>serialport</find>
       <find>setfree</find>
+      <find>compor</find>
+      <find>btnsel</find>
+      <find>SerielleSch</find>
+      <find>select com port</find>
+      <find>port:</find>
+      <find>finished</find>
+      <find>takepic</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -80,9 +143,9 @@
         <option value="$PROJECT_DIR$/src/util/PhotoTimer.java" />
         <option value="$PROJECT_DIR$/src/gui/PhotoFrame.java" />
         <option value="$PROJECT_DIR$/SerielleSchnittstelleV3.jar!/at/htlklu/schnittstellen/SerielleSchnittstelle.class" />
-        <option value="$PROJECT_DIR$/src/gui/SettingsPanel.java" />
         <option value="$PROJECT_DIR$/SerielleSchnittstelleV3.jar!/jssc/SerialNativeInterface.class" />
         <option value="$PROJECT_DIR$/src/threads/LiveView.java" />
+        <option value="$PROJECT_DIR$/src/gui/SettingsPanel.java" />
         <option value="$PROJECT_DIR$/src/gui/PhotoPanel.java" />
       </list>
     </option>
@@ -93,7 +156,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="560" />
     <option name="y" value="36" />
     <option name="width" value="1612" />
@@ -115,6 +178,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,9 +213,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -270,26 +333,31 @@
       <workItem from="1522689771958" duration="866000" />
       <workItem from="1523124146054" duration="1733000" />
       <workItem from="1523186463596" duration="1336000" />
+      <workItem from="1523274694466" duration="354000" />
+      <workItem from="1523380735763" duration="3131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30335000" />
+    <option name="totallyTimeSpent" value="33820000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="560" y="36" width="1612" height="1017" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2181677" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2166149" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.179198" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -301,11 +369,9 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996893" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -344,9 +410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -386,12 +449,6 @@
           <caret line="196" column="56" lean-forward="false" selection-start-line="196" selection-start-column="56" selection-end-line="196" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3083#3196#0" expanded="true" />
-            <element signature="e#3195#3196#0" expanded="true" />
-            <element signature="e#4944#5436#0" expanded="true" />
-            <element signature="e#5218#5411#0" expanded="true" />
-            <element signature="e#5410#5411#0" expanded="true" />
-            <element signature="e#5435#5436#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -400,9 +457,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -442,12 +496,6 @@
           <caret line="196" column="56" lean-forward="true" selection-start-line="196" selection-start-column="56" selection-end-line="196" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3083#3196#0" expanded="true" />
-            <element signature="e#3195#3196#0" expanded="true" />
-            <element signature="e#4944#5436#0" expanded="true" />
-            <element signature="e#5218#5411#0" expanded="true" />
-            <element signature="e#5410#5411#0" expanded="true" />
-            <element signature="e#5435#5436#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -456,9 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -498,12 +543,6 @@
           <caret line="171" column="45" lean-forward="false" selection-start-line="171" selection-start-column="45" selection-end-line="171" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3083#3196#0" expanded="true" />
-            <element signature="e#3195#3196#0" expanded="true" />
-            <element signature="e#4944#5436#0" expanded="true" />
-            <element signature="e#5218#5411#0" expanded="true" />
-            <element signature="e#5410#5411#0" expanded="true" />
-            <element signature="e#5435#5436#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -512,9 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -554,12 +590,6 @@
           <caret line="171" column="45" lean-forward="true" selection-start-line="171" selection-start-column="45" selection-end-line="171" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3083#3196#0" expanded="true" />
-            <element signature="e#3195#3196#0" expanded="true" />
-            <element signature="e#4944#5436#0" expanded="true" />
-            <element signature="e#5218#5411#0" expanded="true" />
-            <element signature="e#5410#5411#0" expanded="true" />
-            <element signature="e#5435#5436#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -568,9 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -610,12 +637,6 @@
           <caret line="221" column="0" lean-forward="true" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3083#3196#0" expanded="true" />
-            <element signature="e#3195#3196#0" expanded="true" />
-            <element signature="e#4944#5436#0" expanded="true" />
-            <element signature="e#5218#5411#0" expanded="true" />
-            <element signature="e#5410#5411#0" expanded="true" />
-            <element signature="e#5435#5436#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -624,9 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -666,12 +684,6 @@
           <caret line="189" column="50" lean-forward="false" selection-start-line="189" selection-start-column="50" selection-end-line="189" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3083#3196#0" expanded="true" />
-            <element signature="e#3195#3196#0" expanded="true" />
-            <element signature="e#4944#5436#0" expanded="true" />
-            <element signature="e#5218#5411#0" expanded="true" />
-            <element signature="e#5410#5411#0" expanded="true" />
-            <element signature="e#5435#5436#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -680,9 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -712,12 +721,6 @@
           <caret line="117" column="37" lean-forward="true" selection-start-line="117" selection-start-column="37" selection-end-line="117" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3083#3196#0" expanded="true" />
-            <element signature="e#3195#3196#0" expanded="true" />
-            <element signature="e#4944#5436#0" expanded="true" />
-            <element signature="e#5218#5411#0" expanded="true" />
-            <element signature="e#5410#5411#0" expanded="true" />
-            <element signature="e#5435#5436#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -768,23 +771,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/SettingsPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2556">
-          <caret line="282" column="77" lean-forward="false" selection-start-line="282" selection-start-column="77" selection-end-line="282" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,18 +806,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/PhotoPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/SettingsPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-149">
-          <caret line="118" column="66" lean-forward="true" selection-start-line="118" selection-start-column="66" selection-end-line="118" selection-end-column="66" />
+        <state relative-caret-position="847">
+          <caret line="200" column="87" lean-forward="false" selection-start-line="200" selection-start-column="87" selection-end-line="200" selection-end-column="87" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3083#3196#0" expanded="true" />
-            <element signature="e#3195#3196#0" expanded="true" />
-            <element signature="e#4944#5436#0" expanded="true" />
-            <element signature="e#5218#5411#0" expanded="true" />
-            <element signature="e#5410#5411#0" expanded="true" />
-            <element signature="e#5435#5436#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/PhotoPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="231" column="38" lean-forward="false" selection-start-line="231" selection-start-column="34" selection-end-line="231" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
