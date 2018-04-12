@@ -14,10 +14,7 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
-import java.awt.print.PageFormat;
-import java.awt.print.Printable;
-import java.awt.print.PrinterException;
-import java.awt.print.PrinterJob;
+import java.awt.print.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -169,6 +166,13 @@ public class PhotoPanel extends JPanel implements KeyListener
 	private void takePicture()
 	{
 		robot.mouseMove(buttonx, buttony);
+
+		try {
+			TimeUnit.MILLISECONDS.sleep(100);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 
 		try {
@@ -237,7 +241,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 								},2000);
 
 							}
-						}, 1700);
+						}, 2400);
 					}
 				});
 			}
@@ -251,7 +255,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 				try {
 					System.out.println("Saving image to file...");
 					System.out.println(currentyProcessingImage.getData().getHeight());
-					currentyProcessingImage.getGraphics().drawImage(overlay, 0, 0, null);
+					//currentyProcessingImage.getGraphics().drawImage(overlay, 0, 0, null);
 					printImage(currentyProcessingImage);
 					ImageIO.write(currentyProcessingImage, "jpg", new File(photoSaveLocation + "\\pb2018_img_" + System.currentTimeMillis() + ".jpg"));
 				} catch (IOException e1) {
@@ -276,7 +280,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 	private void finishTakingPicture()
 	{
 		highlightEOSUtility();
-		takePicture();
+		//takePicture();
 	}
 
 	@Override
@@ -307,16 +311,41 @@ public class PhotoPanel extends JPanel implements KeyListener
 					if (pageIndex != 0) {
 						return NO_SUCH_PAGE;
 					}
+
 					//pageFormat.setOrientation(PageFormat.LANDSCAPE);
-					graphics.drawImage(flip(rotate90DX(image)), 0, 0, (int) pageFormat.getWidth(), (int) pageFormat.getHeight(), null);
+
+					Paper paper = new Paper();
+
+					paper.setSize(4 * 72, 6 * 72);
+					pageFormat.setPaper(paper);
+					pageFormat.setOrientation(PageFormat.LANDSCAPE);
+					
+
+					BufferedImage peter = new BufferedImage(image.getHeight(), image.getWidth(), BufferedImage.TYPE_INT_RGB);
+					peter.getGraphics().drawImage(image, 0, 0, (int) pageFormat.getWidth(), (int) pageFormat.getHeight(), null);
+					try {
+						ImageIO.write(peter, "jpg", new File("C:\\Dev\\gas.jpg"));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+
+					graphics.drawImage(image, 0, 0, (int) pageFormat.getWidth(), (int) pageFormat.getHeight(), null);
 					return PAGE_EXISTS;
 				}
 			});
-			try {
-				printJob.print();
-			} catch (PrinterException e1) {
-				e1.printStackTrace();
+
+
+			if(printJob.printDialog())
+			{
+				try {
+					printJob.print();
+				} catch (PrinterException e1) {
+					e1.printStackTrace();
+				}
 			}
+			//printJob.cancel();
+
+
 			setFree(true);
 		}
 		else
