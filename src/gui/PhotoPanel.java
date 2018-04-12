@@ -46,6 +46,9 @@ public class PhotoPanel extends JPanel implements KeyListener
 	private int buttonx;
 	private int buttony;
 
+	private float eosx;
+	private float eosy;
+
 	private String cameraPhotoLocaton;
 	private String photoSaveLocation;
 
@@ -136,6 +139,8 @@ public class PhotoPanel extends JPanel implements KeyListener
 
 		buttonx = preferences.getInt("buttonx", -1);
 		buttony = preferences.getInt("buttony", -1);
+		eosx = prefs.getFloat("EOSX", -1);
+		eosy = prefs.getFloat("EOSY", -1);
 		cameraPhotoLocaton = preferences.get("camerasavelocation", "");
 		photoSaveLocation = preferences.get("photosavelocation", "");
 
@@ -252,6 +257,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
+				finishTakingPicture();
 			}
 		}
 		else if(button == PButton.NO)
@@ -261,8 +267,16 @@ public class PhotoPanel extends JPanel implements KeyListener
 				print_request = false;
 				updateGraphics = true;
 				setFree(true);
+
+				finishTakingPicture();
 			}
 		}
+	}
+
+	private void finishTakingPicture()
+	{
+		highlightEOSUtility();
+		takePicture();
 	}
 
 	@Override
@@ -318,6 +332,19 @@ public class PhotoPanel extends JPanel implements KeyListener
 			updateGraphics = true;
 			setFree(true);
 		}
+	}
+
+	private void highlightEOSUtility()
+	{
+		robot.mouseMove((int) eosx, (int) eosy);
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+
+		try {
+			TimeUnit.MILLISECONDS.sleep(100);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
+		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 	}
 
 	public BufferedImage flip(BufferedImage image)
