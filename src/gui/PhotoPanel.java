@@ -240,8 +240,9 @@ public class PhotoPanel extends JPanel implements KeyListener
 									}
 								},2000);
 
+
 							}
-						}, 2400);
+						}, 3000);
 					}
 				});
 			}
@@ -257,6 +258,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 					System.out.println(currentyProcessingImage.getData().getHeight());
 					//currentyProcessingImage.getGraphics().drawImage(overlay, 0, 0, null);
 					printImage(currentyProcessingImage);
+					ImageIO.write(currentyProcessingImage, "jpg", new File("C:\\PhotoSaves\\pb2018_img_save_" + System.currentTimeMillis()));
 					ImageIO.write(currentyProcessingImage, "jpg", new File(photoSaveLocation + "\\pb2018_img_" + System.currentTimeMillis() + ".jpg"));
 				} catch (IOException e1) {
 					e1.printStackTrace();
