@@ -15,10 +15,13 @@ public class PhotoFrame extends JFrame
     public PhotoFrame(Preferences preferences, SettingsPanel settingspanel) {
         photopanel = new PhotoPanel(this, preferences, settingspanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 1280, 720);
+        //setBounds(100, 100, 1280, 720);
+        //setSize(1600, 900);
+        //setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //setUndecorated(true);
         setContentPane(photopanel);
         setTitle("Photobox 2018");
-        setResizable(false);
+        setResizable(true);
         ImageIcon img = new ImageIcon("icon.png");
         setIconImage(img.getImage());
         //setUndecorated(true);

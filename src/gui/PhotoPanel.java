@@ -149,7 +149,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 	{
 		Graphics2D g = (Graphics2D) gr;
 		super.paintComponent(g);
-		g.drawImage(liveview.currentImage, 0, 0, 1280, 720, null);
+		g.drawImage(liveview.currentImage, 0, 0, photoFrame.getWidth(), photoFrame.getHeight(), null);
 
 		phototimer.draw(g);
 
@@ -230,7 +230,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 							public void run() {
 								BufferedImage image = loadImageFromCamera();
 								updateGraphics = false;
-								getGraphics().drawImage(image, 0, 0, 1280, 720, null);
+								getGraphics().drawImage(image, 0, 0, photoFrame.getWidth(), photoFrame.getHeight(), null);
 								currentyProcessingImage = image;
 								timer.schedule(new TimerTask() {
 									@Override
