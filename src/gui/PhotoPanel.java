@@ -242,7 +242,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 
 
 							}
-						}, 3000);
+						}, 5000);
 					}
 				});
 			}
@@ -257,7 +257,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 					System.out.println("Saving image to file...");
 					System.out.println(currentyProcessingImage.getData().getHeight());
 					//currentyProcessingImage.getGraphics().drawImage(overlay, 0, 0, null);
-					printImage(currentyProcessingImage);
+					//printImage(currentyProcessingImage);
 					ImageIO.write(currentyProcessingImage, "jpg", new File("C:\\PhotoSaves\\pb2018_img_save_" + System.currentTimeMillis()));
 					ImageIO.write(currentyProcessingImage, "jpg", new File(photoSaveLocation + "\\pb2018_img_" + System.currentTimeMillis() + ".jpg"));
 				} catch (IOException e1) {
@@ -281,7 +281,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 
 	private void finishTakingPicture()
 	{
-		highlightEOSUtility();
+		//highlightEOSUtility();
 		//takePicture();
 	}
 

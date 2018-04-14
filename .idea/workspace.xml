@@ -27,8 +27,8 @@
       <file leaf-file-name="PhotoPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/PhotoPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="244" column="31" selection-start-line="244" selection-start-column="31" selection-end-line="244" selection-end-column="31" />
+            <state relative-caret-position="169">
+              <caret line="259" column="22" selection-start-line="259" selection-start-column="22" selection-end-line="259" selection-end-column="22" />
               <folding>
                 <element signature="e#3010#3123#0" expanded="true" />
                 <element signature="e#3122#3123#0" expanded="true" />
@@ -83,11 +83,12 @@
       <find>eos pos</find>
       <find>takep</find>
       <find>buttonpre</find>
-      <find>finish</find>
       <find>takepic</find>
       <find>loadimage</find>
       <find>set</find>
       <find>imageio</find>
+      <find>finish</find>
+      <find>printimage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -634,8 +635,8 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/awt/image/BufferedImage.java" />
     <entry file="file://$PROJECT_DIR$/src/gui/PhotoPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="244" column="31" selection-start-line="244" selection-start-column="31" selection-end-line="244" selection-end-column="31" />
+        <state relative-caret-position="169">
+          <caret line="259" column="22" selection-start-line="259" selection-start-column="22" selection-end-line="259" selection-end-column="22" />
           <folding>
             <element signature="e#3010#3123#0" expanded="true" />
             <element signature="e#3122#3123#0" expanded="true" />
