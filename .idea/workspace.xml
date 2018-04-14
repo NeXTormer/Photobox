@@ -27,8 +27,8 @@
       <file leaf-file-name="PhotoPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/PhotoPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="262" column="32" selection-start-line="262" selection-start-column="32" selection-end-line="262" selection-end-column="32" />
+            <state relative-caret-position="186">
+              <caret line="260" column="122" selection-start-line="260" selection-start-column="122" selection-end-line="260" selection-end-column="122" />
             </state>
           </provider>
         </entry>
@@ -638,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/PhotoPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="262" column="32" selection-start-line="262" selection-start-column="32" selection-end-line="262" selection-end-column="32" />
+        <state relative-caret-position="186">
+          <caret line="260" column="122" selection-start-line="260" selection-start-column="122" selection-end-line="260" selection-end-column="122" />
         </state>
       </provider>
     </entry>

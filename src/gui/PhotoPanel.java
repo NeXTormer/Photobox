@@ -251,7 +251,7 @@ public class PhotoPanel extends JPanel implements KeyListener
 		{
 			if(print_request)
 			{
-				print_pressed = true;
+				print_request = false;
 				updateGraphics = true;
 				try {
 					System.out.println("Saving image to file...");
